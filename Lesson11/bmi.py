@@ -7,22 +7,26 @@ class Person(ABC):
         self.weight = weight
         self.height = height
 
-    def print_info(self):
-        print(f"Name: {self.name}, Age: {self.age}, Weight: {self.weight}, Height: {self.height}")
+    @property
+    def weight(self):
+        return self.weight
+
+    @weight.setter
+    def weight(self, value):
+        if value > 0:
+            self.weight = value
+        else:
+            raise ValueError("Must have Weight")
 
     @property
-    def name(self, name):
-        return self.name
+    def height(self):
+        return self.height
 
-    @name.setter
-    def name(self, name):
-        self.name = name
+    @height.setter
+    def height(self, value):
+        if value > 0:
+            self.height = value
+        else:
+            raise ValueError("Must have height")
 
-    @property
-    def age(self, age):
-        return self.age
-
-    @age.setter
-    def age(self, age):
-        self.age
-
+    
