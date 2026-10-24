@@ -1,5 +1,4 @@
 import streamlit as st
-from jinja2.lexer import operators
 
 
 def kalkulo(num1,num2,operations):
